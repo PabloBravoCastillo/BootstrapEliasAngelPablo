@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="contenedor row justify-content-center mt-5 mx-5">
+
+        <h1>Listado Clientes</h1>
+        <table class="table table-striped table-hover text-center">
+            <thead>
+                <tr class="bg-primary">
+                    <td>Nombre</td>
+                    <td>Apellidos</td>
+                    <td>Sexo</td>
+                    <td>Edad</td>
+                    <td>Altura (cm)</td>
+                    <td>Peso (kg)</td>
+                    <td>Actividad</td>
+                    <td>GET (kcal)</td>
+                    <td>GER (kcal)</td>
+                    <td>Acción</td>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla" class="table-bordered">
+
+            </tbody>
+        </table>
+
+
+        <div class="botones">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir
+                Cliente</button>
+            <button type="button" onclick="traerDatos()" class="btn btn-secondary">Cargar datos</button>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form class="needs-validation" novalidate>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="nombre">
+                                <label for="validationNombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="validationNombre" value=""
+                                    placeholder="Pedro" required>
+                                <div class="valid-feedback">
+                                    ¡Se ve bien!
+                                </div>
+                            </div>
+                            <label for="validationApellido" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="validationApellidos" value=""
+                                placeholder="Pérez Rodriguez" required>
+                            <div class="valid-feedback">
+                                ¡Se ve bien!
+                            </div>
+                            <label for="validationSexo" class="form-label">Sexo</label>
+                            <select class="form-control" id="validationSexo">
+                                <option>Hombre</option>
+                                <option>Mujer</option>
+                            </select>
+                            <div class="valid-feedback">
+                                ¡Se ve bien!
+                            </div>
+                            <label for="validationEdad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" placeholder="17" min="5" max="110"
+                                id="validationEdad" required>
+                            <div class="valid-feedback">
+                                ¡Se ve bien!
+                            </div>
+                            <label for="validationAltura" class="form-label">Altura (cm)</label>
+                            <input type="number" min="120" max="250" placeholder="175" class="form-control"
+                                id="validationAltura" value="" required>
+                            <div class="valid-feedback">
+                                ¡Se ve bien!
+                            </div>
+                            <label for="validationPeso" class="form-label">Peso (kg)</label>
+                            <input type="number" min="7" max="200" placeholder="54" class="form-control"
+                                id="validationPeso" value="" required>
+                            <div class="valid-feedback">
+                                ¡Se ve bien!
+                            </div>
+                            <label for="validationActividad" class="form-label">Actividad</label>
+                            <select class="form-control" id="validationActividad">
+                                <option value="sedentaria">sedentaria</option>
+                                <option value="ligera">ligera</option>
+                                <option value="moderada">moderada</option>
+                                <option value="intensa">intensa</option>
+                            </select>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" onclick="validacionFrom()" class="btn btn-primary">Añadir Cliente</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
